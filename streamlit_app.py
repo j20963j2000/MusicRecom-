@@ -8,11 +8,11 @@ nodes = []
 edges = []
 nodes.append( Node(id="Spiderman", 
                    label="Peter Parker", 
-                   size=400, 
+                   size=2000, 
                    svg="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_spiderman.png") 
             ) # includes **kwargs
 nodes.append( Node(id="Captain_Marvel", 
-                   size=400, 
+                   size=2000, 
                    svg="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainmarvel.png") 
             )
 edges.append( Edge(source="Captain_Marvel", 
@@ -21,8 +21,8 @@ edges.append( Edge(source="Captain_Marvel",
                    type="CURVE_SMOOTH") 
             ) # includes **kwargs
 
-config = Config(width=2000, 
-                height=2000, 
+config = Config(width=500, 
+                height=500, 
                 directed=True,
                 nodeHighlightBehavior=True, 
                 highlightColor="#F7A7A6", # or "blue"
