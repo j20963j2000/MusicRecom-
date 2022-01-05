@@ -8,11 +8,11 @@ nodes = []
 edges = []
 nodes.append( Node(id="Spiderman", 
                    label="Peter Parker", 
-                   size=2000, 
+                   size=800, 
                    svg="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_spiderman.png") 
             ) # includes **kwargs
 nodes.append( Node(id="Captain_Marvel", 
-                   size=2000, 
+                   size=800, 
                    svg="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainmarvel.png") 
             )
 edges.append( Edge(source="Captain_Marvel", 
