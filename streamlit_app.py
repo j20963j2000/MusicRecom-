@@ -4,68 +4,34 @@ from SPARQLWrapper import SPARQLWrapper
 from streamlit_agraph import agraph, TripleStore, Config
 
 
-def get_inspired():
-    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+nodes = []
+edges = []
+nodes.append( Node(id="Spiderman", 
+                   label="Peter Parker", 
+                   size=400, 
+                   svg="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_spiderman.png") 
+            ) # includes **kwargs
+nodes.append( Node(id="Captain_Marvel", 
+                   size=400, 
+                   svg="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainmarvel.png") 
+            )
+edges.append( Edge(source="Captain_Marvel", 
+                   label="friend_of", 
+                   target="Spiderman", 
+                   type="CURVE_SMOOTH") 
+            ) # includes **kwargs
 
-    query_string = """
-    SELECT ?name_pe1_en ?rel_en ?name_pe2_en 
-    WHERE {
-    {
-            SELECT ?name_p1 ?rel ?name_p2 
-            WHERE {
-                ?p1 a foaf:Person .
-                ?p1 dbo:influencedBy ?p2 .
-                ?p2 a foaf:Person .
-                ?p1 foaf:name ?name_p1 .
-                ?p2 foaf:name ?name_p2 .
-            dbo:influencedBy rdfs:label ?rel .
-            }  
-            LIMIT 100
-    }
-    UNION
-    {
-            SELECT ?name_p1 ?rel ?name_p2 
-            WHERE {
-            ?p1 a foaf:Person .
-            ?p1 dbo:influenced ?p2 .
-            ?p2 a foaf:Person .
-            ?p1 foaf:name ?name_p1 .
-            ?p2 foaf:name ?name_p2 .
-            dbo:influenced rdfs:label ?rel .                                
-        } 
-        LIMIT 100
-    }
-    FILTER ( LANG(?name_p1) = "en" && LANG(?rel) = "en" && LANG(?name_p2) = "en" )
-    BIND ( STR(?name_p1) AS ?name_pe1_en )      
-    BIND ( STR(?rel) AS ?rel_en )
-    BIND ( STR(?name_p2) AS ?name_pe2_en )    
-    }
-    """
+config = Config(width=500, 
+                height=500, 
+                directed=True,
+                nodeHighlightBehavior=True, 
+                highlightColor="#F7A7A6", # or "blue"
+                collapsible=True,
+                node={'labelProperty':'label'},
+                link={'labelProperty': 'label', 'renderLabel': True}
+                # **kwargs e.g. node_size=1000 or node_color="blue"
+                ) 
 
-    sparql.setQuery(query_string)
-    sparql.setReturnFormat(JSON)
-    results = sparql.query().convert()
-    store = TripleStore()
-    for result in results["results"]["bindings"]:
-        node1 = result["name_pe1_en"]["value"]
-        link = result["rel_en"]["value"]
-        node2 = result["name_pe2_en"]["value"]
-        store.add_triple(node1,link,node2)
-    return store
-
-def app():
-    st.title("Graph Example")
-    st.sidebar.title("Welcome")
-    query_type = st.sidebar.selectbox("Quey Tpye: ", ["Inspirationals"]) # could add more stuff here later on or add other endpoints in the sidebar.
-    config = Config(height=500, width=700, nodeHighlightBehavior=True, highlightColor="#F7A7A6", directed=True,
-                    collapsible=True)
-    if query_type=="Inspirationals":
-        st.subheader("Inspirationals")
-        with st.spinner("Loading data"):
-            store = get_inspired()
-            st.write(len(store.getNodes()))
-        st.success("Done")
-        agraph(list(store.getNodes()), (store.getEdges() ), config)
-
-if __name__ == '__main__':
-    app()
+return_value = agraph(nodes=nodes, 
+                      edges=edges, 
+                      config=config)
