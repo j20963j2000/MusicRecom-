@@ -34,12 +34,3 @@ config = Config(width=500,
 return_value = agraph(nodes=nodes, 
                       edges=edges, 
                       config=config)
-
-graph = Graph()
-graph.parse("http://www.w3.org/People/Berners-Lee/card")
-store = TripleStore()
-
-for subj, pred, obj in graph:
-    store.add_triple(subj, pred, obj, "")
-    
-agraph(list(store.getNodes()), list(store.getEdges()), Config)
