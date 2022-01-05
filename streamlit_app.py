@@ -21,8 +21,8 @@ edges.append( Edge(source="Captain_Marvel",
                    type="CURVE_SMOOTH") 
             ) # includes **kwargs
 
-config = Config(width=500, 
-                height=500, 
+config = Config(width=2000, 
+                height=2000, 
                 directed=True,
                 nodeHighlightBehavior=True, 
                 highlightColor="#F7A7A6", # or "blue"
