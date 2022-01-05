@@ -1,5 +1,6 @@
 
 import streamlit as st
+from rdflib import Graph
 from SPARQLWrapper import SPARQLWrapper
 from streamlit_agraph import agraph, Node, Edge, Config, TripleStore
 
