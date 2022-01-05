@@ -1,7 +1,7 @@
 
 import streamlit as st
 from SPARQLWrapper import SPARQLWrapper
-from streamlit_agraph import agraph, TripleStore, Config
+from streamlit_agraph import agraph, Node, Edge, Config
 
 
 nodes = []
