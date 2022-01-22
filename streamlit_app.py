@@ -38,11 +38,12 @@ if st.sidebar.button("Go Explore !"):
               original = Image.open("images/silksonic.jpg")
               col1.image(original, use_column_width=True)
 
-              col2.write("Bruno Mars")
-              col2.write("Leave the door open")
-              if st.button("Listening on Spotify"):
-                     link = '[GitHub](http://github.com)'
-                     st.markdown(link, unsafe_allow_html=True)
+              with col2:
+                     col2.write("Bruno Mars")
+                     col2.write("Leave the door open")
+                     if st.button("Listening on Spotify"):
+                            link = '[GitHub](http://github.com)'
+                            st.markdown(link, unsafe_allow_html=True)
 
        st.markdown("---")
        container2 = st.container()       
