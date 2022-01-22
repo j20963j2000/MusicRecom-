@@ -30,18 +30,20 @@ if st.sidebar.button("Go Explore !"):
        st.write("Artist :", user_preference_artist)
        st.write("Style :", user_preference_style)
 
-       container = st.container()
-
        st.markdown("---")
+       container = st.container()
        with container:
               st.markdown(
                      "This would desplay first exploring result"
               )
+       
        st.markdown("---")
-       with container:
+       container2 = st.container()       
+       with container2:
               st.markdown(
                      "This would desplay second exploring result"
               )
+              
        st.markdown("---")
 else:
        st.write("Let's Explore !")
