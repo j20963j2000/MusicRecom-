@@ -20,5 +20,5 @@ def user_input_features():
 df = user_input_features()
 
 user_preference_artist = df["artist"][0]
-
-st.write("We explore songs based on :", user_input_features)
+st.subheader('We explore songs base on :')
+st.write(user_input_features)
