@@ -27,6 +27,7 @@ user_preference_style = df["style"].item()
 
 if st.sidebar.button("Go Explore !"):
        st.subheader('We explore songs base on :')
-       st.write("Artist :", user_preference_artist, "Style :", user_preference_style)
+       st.write("Artist :", user_preference_artist)
+       st.write("Style :", user_preference_style)
 else:
        st.write("Let's Explore !")
