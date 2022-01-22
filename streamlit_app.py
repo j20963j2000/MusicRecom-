@@ -69,5 +69,21 @@ if st.sidebar.button("Go Explore !"):
                             st.bokeh_chart(div)
 
        st.markdown("---")
+       container3 = st.container()       
+       with container3:
+              col1, col2 = st.columns([1, 3])
+              original = Image.open("images/doowops.jpg")
+              col1.image(original, use_column_width=True)
+
+              with col2:
+                     col2.write("Bruno Mars")
+                     col2.write("Grenade")
+                     button2 = st.button("Listening on Spotify", key=1)
+                     if button2:
+                            js = "window.open('https://www.streamlit.io/')"  # New tab or window
+                            js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
+                            html = '<img src onerror="{}">'.format(js)
+                            div = Div(text=html)
+                            st.bokeh_chart(div)
 else:
        st.write("Let's Explore !")
