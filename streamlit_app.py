@@ -25,5 +25,4 @@ user_preference_artist = df["artist"].item()
 user_preference_style = df["style"].item()
 st.subheader('We explore songs base on :')
 
-st.write("Artist :", user_preference_artist)
-st.write("Style :", user_preference_style)
+st.write("Artist :", user_preference_artist, "Style :", user_preference_style)
