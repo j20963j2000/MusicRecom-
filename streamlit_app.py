@@ -29,8 +29,8 @@ if st.sidebar.button("Go Explore !"):
        st.subheader('We explore songs base on :')
        st.write("Artist :", user_preference_artist)
        st.write("Style :", user_preference_style)
-
        st.markdown("---")
+       
        container = st.container()
        with container:
               st.markdown(
@@ -43,7 +43,7 @@ if st.sidebar.button("Go Explore !"):
               st.markdown(
                      "This would desplay second exploring result"
               )
-              
+
        st.markdown("---")
 else:
        st.write("Let's Explore !")
