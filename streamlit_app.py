@@ -1,3 +1,4 @@
+import Image from PIL
 import pandas as pd
 import streamlit as st
 
@@ -30,13 +31,16 @@ if st.sidebar.button("Go Explore !"):
        st.write("Artist :", user_preference_artist)
        st.write("Style :", user_preference_style)
        st.markdown("---")
-       
+
        container = st.container()
        with container:
-              st.markdown(
-                     "This would desplay first exploring result"
-              )
-       
+              col1, col2 = st.columns([1, 3])
+              original = Image.open("image/silksonic.jpg")
+              col1.image(original, use_column_width=True)
+
+              col2.write("Bruno Mars")
+              col2.write("Leave the door open")
+
        st.markdown("---")
        container2 = st.container()       
        with container2:
