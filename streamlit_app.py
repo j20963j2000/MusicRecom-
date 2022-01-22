@@ -35,7 +35,7 @@ if st.sidebar.button("Go Explore !"):
        container = st.container()
        with container:
               col1, col2 = st.columns([1, 3])
-              original = Image.open("image/silksonic.jpg")
+              original = Image.open("images/silksonic.jpg")
               col1.image(original, use_column_width=True)
 
               col2.write("Bruno Mars")
