@@ -8,7 +8,7 @@ st.write("""
 
 """)
 
-st.sidebar.header("Give us some infors !")
+st.sidebar.header("Give us some informations !")
 
 
 def user_input_features():
@@ -19,10 +19,13 @@ def user_input_features():
        features = pd.DataFrame(data, index=[0])
        return features
 
-df = user_input_features()
+if st.sidebar.button("Go Explore !"):
+       df = user_input_features()
 
-user_preference_artist = df["artist"].item()
-user_preference_style = df["style"].item()
-st.subheader('We explore songs base on :')
+       user_preference_artist = df["artist"].item()
+       user_preference_style = df["style"].item()
+       st.subheader('We explore songs base on :')
 
-st.write("Artist :", user_preference_artist, "Style :", user_preference_style)
+       st.write("Artist :", user_preference_artist, "Style :", user_preference_style)
+else:
+       st.write("Let's Explore !")
