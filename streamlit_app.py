@@ -40,8 +40,8 @@ if st.sidebar.button("Go Explore !"):
               col1.image(original, use_column_width=True)
 
               with col2:
-                     col2.write("Bruno Mars")
-                     col2.write("Leave the door open")
+                     col2.write("Artist : ", "Bruno Mars")
+                     col2.write("Album : ", "Leave the door open")
                      button1 = st.button("Listening on Spotify", key=0)
                      if button1:
                             js = "window.open('https://www.streamlit.io/')"  # New tab or window
@@ -58,8 +58,8 @@ if st.sidebar.button("Go Explore !"):
               col1.image(original, use_column_width=True)
 
               with col2:
-                     col2.write("Bruno Mars")
-                     col2.write("24k Magics")
+                     col2.write("Artist : ", "Bruno Mars")
+                     col2.write("Album : ", "24k Magics")
                      button2 = st.button("Listening on Spotify", key=1)
                      if button2:
                             js = "window.open('https://www.streamlit.io/')"  # New tab or window
