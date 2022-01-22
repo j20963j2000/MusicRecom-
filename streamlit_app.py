@@ -53,7 +53,7 @@ if st.sidebar.button("Go Explore !"):
        container2 = st.container()       
        with container2:
               col1, col2 = st.columns([1, 3])
-              original = Image.open("images/24kmagics.jpg")
+              original = Image.open("images/24magics.jpg")
               col1.image(original, use_column_width=True)
 
               with col2:
