@@ -42,7 +42,7 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("Leave the door open")
-                     buttom1 = st.button("Listening on Spotify")
+                     button1 = st.button("Listening on Spotify")
                      if button1:
                             js = "window.open('https://www.streamlit.io/')"  # New tab or window
                             js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
