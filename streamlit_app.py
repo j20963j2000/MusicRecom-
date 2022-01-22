@@ -30,7 +30,7 @@ if st.sidebar.button("Go Explore !"):
        st.write("Artist :", user_preference_artist)
        st.write("Style :", user_preference_style)
 
-       container = st.beta_container()
+       container = st.container()
 
        with container:
               st.markdown(
