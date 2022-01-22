@@ -1,7 +1,7 @@
 from PIL import Image 
 import pandas as pd
 import streamlit as st
-from link_button import link_button
+from bokeh.models.widgets import Div
 
 st.title("MusicRecom")
 
@@ -42,7 +42,12 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("Leave the door open")
-                     link_button('Click Me!', 'https://docs.streamlit.io/en/stable/')
+                     if st.button("Listening on Spotify"):
+                            js = "window.open('https://www.streamlit.io/')"  # New tab or window
+                            js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
+                            html = '<img src onerror="{}">'.format(js)
+                            div = Div(text=html)
+                            st.bokeh_chart(div)
 
        st.markdown("---")
        container2 = st.container()       
