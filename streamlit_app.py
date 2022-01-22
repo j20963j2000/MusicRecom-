@@ -52,9 +52,19 @@ if st.sidebar.button("Go Explore !"):
        st.markdown("---")
        container2 = st.container()       
        with container2:
-              st.markdown(
-                     "This would desplay second exploring result"
-              )
+              col1, col2 = st.columns([1, 3])
+              original = Image.open("images/24kmagics.jpg")
+              col1.image(original, use_column_width=True)
+
+              with col2:
+                     col2.write("Bruno Mars")
+                     col2.write("24k Magics")
+                     if st.button("Listening on Spotify"):
+                            js = "window.open('https://www.streamlit.io/')"  # New tab or window
+                            js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
+                            html = '<img src onerror="{}">'.format(js)
+                            div = Div(text=html)
+                            st.bokeh_chart(div)
 
        st.markdown("---")
 else:
