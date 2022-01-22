@@ -1,4 +1,4 @@
-import Image from PIL
+from PIL import Image 
 import pandas as pd
 import streamlit as st
 
