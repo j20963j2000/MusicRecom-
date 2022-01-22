@@ -32,15 +32,16 @@ if st.sidebar.button("Go Explore !"):
 
        container = st.container()
 
+       st.markdonw("---")
        with container:
               st.markdown(
                      "This would desplay first exploring result"
               )
-
+       st.markdonw("---")
        with container:
               st.markdown(
                      "This would desplay second exploring result"
               )
-
+       st.markdonw("---")
 else:
        st.write("Let's Explore !")
