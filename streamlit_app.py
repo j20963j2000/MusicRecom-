@@ -13,7 +13,7 @@ st.sidebar.header("Give us some informations !")
 
 def user_input_features():
        artist = st.sidebar.text_input("Which artist you like the most ?", "Bruno Mars")
-       style = st.sidebar.text_input("Which style you want to explore ?", "Pop")
+       style = st.sidebar.selectbox("Which style you want to explore ?", ("Pop", "Rock"))
        data = {"artist":artist, 
                "style":style}
        features = pd.DataFrame(data, index=[0])
