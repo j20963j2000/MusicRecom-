@@ -42,7 +42,8 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("Leave the door open")
-                     if st.button("Listening on Spotify"):
+                     buttom1 = st.button("Listening on Spotify")
+                     if button:
                             js = "window.open('https://www.streamlit.io/')"  # New tab or window
                             js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
                             html = '<img src onerror="{}">'.format(js)
