@@ -21,5 +21,4 @@ df = user_input_features()
 
 user_preference_artist = df["artist"]
 
-if df:
-       st.write("We explore songs based on :", user_input_features)
+st.write("We explore songs based on :", user_input_features)
