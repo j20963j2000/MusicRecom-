@@ -13,12 +13,17 @@ st.sidebar.header("Give us some infors !")
 
 def user_input_features():
        artist = st.sidebar.text_input("Which artist you like the most ?", "Bruno Mars")
-       data = {"artist":artist}
+       style = st.sidebar.text_input("Which style you want to explore ?", "Pop")
+       data = {"artist":artist, 
+               "style":style}
        features = pd.DataFrame(data, index=[0])
        return features
 
 df = user_input_features()
 
 user_preference_artist = df["artist"].item()
+user_preference_style = df["style"].item()
 st.subheader('We explore songs base on :')
-st.write(user_preference_artist)
+
+st.write("Artist :", user_preference_artist)
+st.write("Style :", user_preference_style)
