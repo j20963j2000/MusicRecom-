@@ -19,13 +19,14 @@ def user_input_features():
        features = pd.DataFrame(data, index=[0])
        return features
 
+
+df = user_input_features()
+
+user_preference_artist = df["artist"].item()
+user_preference_style = df["style"].item()
+
 if st.sidebar.button("Go Explore !"):
-       df = user_input_features()
-
-       user_preference_artist = df["artist"].item()
-       user_preference_style = df["style"].item()
        st.subheader('We explore songs base on :')
-
        st.write("Artist :", user_preference_artist, "Style :", user_preference_style)
 else:
        st.write("Let's Explore !")
