@@ -42,9 +42,9 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("Leave the door open")
-                     button1 = st.button("check out on [Spotify](https://open.spotify.com/track/7MAibcTli4IisCtbHKrGMh)", key=0)
+                     # button1 = st.button("Listening on Spotify", key=0)
                      # if button1:
-                     # st.write("check out on [Spotify](https://open.spotify.com/track/7MAibcTli4IisCtbHKrGMh)")
+                     st.write("check out on [Spotify](https://open.spotify.com/track/7MAibcTli4IisCtbHKrGMh)")
 
        st.markdown("---")
        container2 = st.container()       
@@ -56,13 +56,8 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("24k Magics")
-                     button2 = st.button("Listening on Spotify", key=2)
-                     if button2:
-                            js = "window.open('https://www.streamlit.io/')"  # New tab or window
-                            js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
-                            html = '<img src onerror="{}">'.format(js)
-                            div = Div(text=html)
-                            st.bokeh_chart(div)
+                     # button2 = st.button("Listening on Spotify", key=2)
+                     st.write("check out on [Spotify](https://open.spotify.com/album/4PgleR09JVnm3zY1fW3XBA)")
 
        st.markdown("---")
        container3 = st.container()       
@@ -74,12 +69,7 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("Grenade")
-                     button2 = st.button("Listening on Spotify", key=1)
-                     if button2:
-                            js = "window.open('https://www.streamlit.io/')"  # New tab or window
-                            js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
-                            html = '<img src onerror="{}">'.format(js)
-                            div = Div(text=html)
-                            st.bokeh_chart(div)
+                     # button2 = st.button("Listening on Spotify", key=1)
+                     st.write("check out on [Spotify](https://open.spotify.com/track/1WWR7F24UbFi06sfvcnvD8?si=3e0256d5a079467b)")
 else:
        st.write("Let's Explore !")
