@@ -42,9 +42,9 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("Leave the door open")
-                     # button1 = st.button("Listening on Spotify", key=0)
+                     button1 = st.button("check out on [Spotify](https://open.spotify.com/track/7MAibcTli4IisCtbHKrGMh)", key=0)
                      # if button1:
-                     st.write("check out on [Spotify](https://open.spotify.com/track/7MAibcTli4IisCtbHKrGMh)")
+                     # st.write("check out on [Spotify](https://open.spotify.com/track/7MAibcTli4IisCtbHKrGMh)")
 
        st.markdown("---")
        container2 = st.container()       
