@@ -42,9 +42,9 @@ if st.sidebar.button("Go Explore !"):
               with col2:
                      col2.write("Bruno Mars")
                      col2.write("Leave the door open")
-                     button1 = st.button("Listening on Spotify", key=0)
-                     if button1:
-                            st.write("check out this [link](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)")
+                     # button1 = st.button("Listening on Spotify", key=0)
+                     # if button1:
+                     st.write("check out this [link](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)")
 
        st.markdown("---")
        container2 = st.container()       
