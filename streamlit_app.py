@@ -44,11 +44,7 @@ if st.sidebar.button("Go Explore !"):
                      col2.write("Leave the door open")
                      button1 = st.button("Listening on Spotify", key=0)
                      if button1:
-                            js = "window.open('https://www.streamlit.io/')"  # New tab or window
-                            js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
-                            html = '<img src onerror="{}">'.format(js)
-                            div = Div(text=html)
-                            st.bokeh_chart(div)
+                            st.write("check out this [link](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)")
 
        st.markdown("---")
        container2 = st.container()       
